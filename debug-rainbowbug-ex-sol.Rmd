@@ -25,9 +25,19 @@ x_fds <- fds(x = t_grid, y = x)
 
 layout(t(1:2))
 matplot(t_grid, x, lty = 1, col = rgb(0, 0, 0, .2), type = "l", lwd = 1.5)
-fboxplot(x_fds)
+debugonce(fboxplot)
+fboxplot(x_fds, plotlegend = FALSE)
 ```
 
-a) Lokalisieren Sie wo im Code der Fehler auftritt (also: *Auslöser* des Fehlers), ermitteln Sie die *Ursache* des Fehlers (nicht das selbe!). Was müssten Sie im obigen Code-Snippet ändern, damit der Fehler nicht mehr auftritt?  
+a) Lokalisieren Sie wo im Code der Fehler auftritt (also: *Auslöser* des Fehlers), ermitteln Sie die *Ursache* des Fehlers (nicht das selbe!). Was müssten Sie im obigen Code-Snippet ändern, damit der Fehler nicht mehr auftritt? 
 Benutzen Sie den interaktiven Debugger und die anderen Debugging-Werkzeige die Sie kennen um diese Aufgabe zu lösen.
+
+Auslöser in der fbag fkt in der fboxplotfkt -> debug in fbag -> colnames von y fehlen und legend ist auf true gesetzt als default (Ursache).
+Man kann plotlegend auf false setzen, um den Fehler zu umgehen. allerdings treten dann immernoch warnmeldungen auf... eine andere möglichkeit ist y colnames hinzuzufügen.
+
+
 b) Wie könnte der Code im `rainbow`-Paket verbessert werden um den obigen Fehler zu vermeiden? (keine Implementation gefragt, Pseudo-Code / Lösungsskizze genügt...)
+
+
+default einstellung zu plotlegend ändern oder noch besser input checks (beispielsweise mit checkmate) einbauen
+die prüfen, ob colnames vorhanden sind.

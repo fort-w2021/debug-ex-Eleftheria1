@@ -11,6 +11,9 @@ plot_scatterhist(x)
 ```
 
 a) Benutzen Sie `traceback()` um rauszukriegen warum `plot_scatterhist(trees)` nicht funktioniert. Beschreiben Sie das Problem.
+
+Die Ursache des problems ist der Aufruf von plot in zeile 7 der plot_scatterhist fkt. Hier bei wird xlab als "" string übergeben, dies führt dazu, dass während des versuchs die einzelnen plots für ein pairplot zu erzeugen das argument xlab nicht zugeordnet werden kann (auslöser). 
+
 b) Benutzen Sie `debug()` um bei dem Aufruf `plot_scatterhist(x)` Zeile für Zeile durch den Code zu gehen. Quadrieren Sie die Daten *nachdem* der Scatterplot gezeichnet wurde aber *bevor* die Histogramme gezeichnet werden. Das sollte dann -- völlig sinnloserweise -- so wie die untenstehende Grafik aussehen:
 
 ```{r, square_debug, echo=FALSE, message=FALSE, fig.height=3, fig.width=5, results='hide'}
@@ -24,4 +27,3 @@ untrace(plot_scatterhist)
 c) Setzen Sie einen Breakpoint in `plot_scatterhist()` so, dass sie den interaktiven Debugger genau vor dem ersten Aufruf von `plot()` in `plot_scatterhist()` betreten. 
 
 *Hinweis*: Hier nur Prosa-Antworten gefragt, sie müssen Ihre Lösung nicht mit Programmcode dokumentieren -- z.B. `traceback()` wird in einem .Rmd file nicht den selben Output produzieren wie in einem normalen R-Skript...
-
