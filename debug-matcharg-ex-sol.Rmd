@@ -4,7 +4,7 @@ In dieser Aufgabe geht es darum fremden, einigermaßen komplexen Code zu lesen u
 
 Schauen Sie sich die Hilfe und den Quellcode für `match.arg()` an und kopieren Sie den Quellcode in ihre Lösung.  
 Kommentierten Quellcode für `match.arg()` und andere `base`-Funktionen finden Sie [hier](https://github.com/wch/r-source/blob/ce1ceeddd6ff6a22a76d68a83fc15a50e220e204/src/library/base/R/match.R#L41).
-
+ 
 Benutzen Sie den interaktiven Debugger via
 ```{r, match_arg_dbg, eval = FALSE}
 make_something <- function(something = c("mess", "cake", "hyuuge mistake")) {
