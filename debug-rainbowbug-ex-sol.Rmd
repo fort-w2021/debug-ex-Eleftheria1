@@ -37,7 +37,7 @@ Man kann plotlegend auf false setzen, um den Fehler zu umgehen. allerdings trete
 
 
 b) Wie könnte der Code im `rainbow`-Paket verbessert werden um den obigen Fehler zu vermeiden? (keine Implementation gefragt, Pseudo-Code / Lösungsskizze genügt...)
-
+ 
 
 default einstellung zu plotlegend ändern oder noch besser input checks (beispielsweise mit checkmate) einbauen
 die prüfen, ob colnames vorhanden sind.
